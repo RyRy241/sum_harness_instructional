@@ -1,0 +1,9 @@
+# HW1 sum study,Perlmutter CPU node (AMD EPYC 7763),single core,
+# GCC 7.5.0,-O1 -march=native; median of 3 runs,,
+Problem Size,direct sum (no memory access),vector sum,indirect sum
+8388608,0,9.8658,2.2663
+16777216,0,10.9735,1.8502
+33554432,0,10.818,1.6631
+67108864,0,11.0847,1.583
+134217728,0,11.5345,1.5441
+268435456,0,11.9896,1.5166
