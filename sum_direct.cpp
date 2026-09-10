@@ -11,21 +11,20 @@
 void 
 setup(int64_t N, int64_t A[])
 {
-   (void)A; // preventing any unused variable warnings
+   (void)A; 
    printf(" inside direct_sum problem_setup, N=%lld \n", (long long)N);
 }
 
 int64_t
 sum(int64_t N, int64_t A[])
 {
-   (void)A; // preventing any unused variable warnings
+   (void)A;
 
    int64_t sum = 0;
    for (int64_t i = 0; i < N; i++) {
       sum += i;
    }
-   // printf(" inside direct_sum perform_sum, N=%lld \n", (long long)N);
-
+   
    return sum;
 }
 

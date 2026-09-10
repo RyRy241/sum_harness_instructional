@@ -77,7 +77,6 @@ def make_chart(key):
     var_names = list(df.columns)
     print("var names =", var_names)
 
-    # column order - 0->problem size, 1->direct, 2->vector, 3->indirect
     problem_sizes = df[var_names[0]].values.tolist()
     code1_time = df[var_names[1]].values.tolist()
     code2_time = df[var_names[2]].values.tolist()
@@ -96,9 +95,6 @@ def make_chart(key):
  
     if cfg["logy"]:
         plt.yscale("log")
-        # a log axis labels only the decades by default (a lone "10^3"), which
-        # makes values impossible to read off; label useful values as plain
-        # numbers instead
         ax = plt.gca()
         ax.set_yticks(cfg["yticks"])
         ax.yaxis.set_major_formatter(ScalarFormatter())
@@ -114,17 +110,11 @@ def make_chart(key):
  
     plt.grid(axis='both')
  
-    # provenance caption: a benchmark chart without its hardware and compiler
-    # settings is not reproducible
     plt.figtext(0.42, 0.045, PLATFORM, ha="center", fontsize=8, style="italic")
  
-    # reserve the right-hand margin for the legend. tight_layout() is not used
-    # here because it only measures artists inside the axes and would clip a
-    # legend placed outside them; bbox_inches="tight" at save time grows the
-    # canvas to fit whatever ends up outside.
+
     plt.subplots_adjust(left=0.08, right=0.76, top=0.87, bottom=0.17)
  
-    # save the figure before trying to show the plot
     plt.savefig(cfg["plot_fname"], dpi=300, bbox_inches="tight")
     print("wrote " + cfg["plot_fname"])
  

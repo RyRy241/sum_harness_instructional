@@ -51,7 +51,6 @@ int main(int argc, char** argv)
 
       printf(" Sum result = %lld \n", (long long)t);
 
-      // machine-readable line, for easy copy/paste into a spreadsheet
       printf("CSV,%lld,%.9f\n", (long long)n, elapsed.count());
 
    } // end loop over problem sizes
