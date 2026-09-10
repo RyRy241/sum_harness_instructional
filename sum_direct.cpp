@@ -18,13 +18,11 @@ setup(int64_t N, int64_t A[])
 int64_t
 sum(int64_t N, int64_t A[])
 {
-   (void)A;
-
    int64_t sum = 0;
    for (int64_t i = 0; i < N; i++) {
       sum += i;
    }
-   
+
    return sum;
 }
 
